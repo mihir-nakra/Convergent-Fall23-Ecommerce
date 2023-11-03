@@ -19,12 +19,14 @@ function LoginPage() {
 
 
   // State to hold the username and password entered by the user.
-  const [username, setUsername] = useState("");
+  const [startupName, setStartUpName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   // TODO: Handle login function.
   const handleLogin = () => {
-    login(username, password)
+    login(startupName, email, password)
   };
 
 
@@ -36,7 +38,8 @@ function LoginPage() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-        }}
+        }} 
+      className="create-account"
       >
         <Box
           component="img"
@@ -47,7 +50,7 @@ function LoginPage() {
           }}
         ></Box>
         <Typography component="h1" variant="h4" fontWeight="bold">
-          Login
+          Create Your Account
         </Typography>
         <Box sx={{ mt: 1 }}>
           <TextField
@@ -55,13 +58,26 @@ function LoginPage() {
             margin="normal"
             required
             fullWidth
-            id="username"
-            label="Username"
+            id="startupName"
+            label="Company Name"
             InputLabelProps={{ shrink: true }}
-            placeholder="admin"
+            placeholder="Your Company Name"
             autoFocus
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={startupName}
+            onChange={(e) => setStartUpName(e.target.value)}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email"
+            InputLabelProps={{ shrink: true }}
+            placeholder="youremail@example.com"
+            autoFocus
+            value={startupName}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             variant="outlined"
@@ -72,8 +88,21 @@ function LoginPage() {
             type="password"
             id="password"
             InputLabelProps={{ shrink: true }}
-            placeholder="racecar"
+            placeholder="Password"
             value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            label="Confirm Password"
+            type="password"
+            id="confirmPassword"
+            InputLabelProps={{ shrink: true }}
+            placeholder="Confirm Password"
+            value={confirmPassword}
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button
@@ -84,7 +113,7 @@ function LoginPage() {
             sx={{ mt: 3, mb: 2 }}
             onClick={handleLogin}
           >
-            Login
+            Create Account
           </Button>
         </Box>
         {/* TODO: Display Login Error if it exists */}

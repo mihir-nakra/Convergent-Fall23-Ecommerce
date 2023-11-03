@@ -18,15 +18,16 @@ export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState(() => JSON.parse(localStorage.getItem('user')));
     const [loginError, setLoginError] = useState(null);
 
-    const VALID_USERNAME = "admin"
+    const VALID_STARTUPNAME = "admin"
+    const VALID_EMAIL = "youremail@example.com"
     const VALID_PASSWORD = "foobar"
     
 
     // Login function that validates the provided username and password.
-    const login = (username, password) => {
-        if (username === VALID_USERNAME && password === VALID_PASSWORD) {
-            setCurrentUser({username})
-            localStorage.setItem('user', JSON.stringify({username}))
+    const login = (startupName, email, password) => {
+        if (startupName === VALID_STARTUPNAME && password === VALID_PASSWORD) {
+            setCurrentUser({startupName})
+            localStorage.setItem('user', JSON.stringify({startupName}))
             navigate("/")
         } else {
             setLoginError("ERROR")

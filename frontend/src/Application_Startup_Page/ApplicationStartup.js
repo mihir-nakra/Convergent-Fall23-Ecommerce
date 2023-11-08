@@ -8,7 +8,7 @@ import {
   Alert,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "./AuthContext";
 
 function ApplicationStartup() {
   const theme = useTheme();

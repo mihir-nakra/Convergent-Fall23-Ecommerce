@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { AuthProvider } from "./contexts/AuthContext"; // Custom context for authentication
-import HomePage from "./components/HomePage"; // Component for the homepage
-import LoginPage from "./components/LoginPage"; // Component for the login page
+import { AuthProvider } from "./AuthContext"; // Custom context for authentication
+import HomePage from "./HomePage"; // Component for the homepage
+import LoginPage from "./LoginPage"; // Component for the login page
 import { CssBaseline } from "@mui/material"; // For consistent baseline styling
-import theme from "./Theme"; // Custom theme settings
+// import theme from "./Theme"; // Custom theme settings
 
 function App() {
   const createAccountStyle = {

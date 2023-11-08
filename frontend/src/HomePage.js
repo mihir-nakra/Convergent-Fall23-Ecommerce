@@ -11,9 +11,9 @@ import {
   Box,
   Grid,
 } from "@mui/material";
-import Header from "./Header";
+// import Header from "./Header";
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from './AuthContext'
 
 export default function HomePage() {
   const navigate = useNavigate();

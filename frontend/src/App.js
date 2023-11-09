@@ -13,7 +13,7 @@ import Hello from './Application_Startup_Page/Hello';
 function App() {
   const router = createBrowserRouter(
     [
-      {path: "/", element: <LoginPage></LoginPage>},
+      {path: "/", element: <LoginPageStyling></LoginPageStyling>},
       {path: "/ApplicationStartup", element: <Hello />}
     ]
   );

@@ -77,7 +77,7 @@ function LoginPage() {
             InputLabelProps={{ shrink: true }}
             placeholder="youremail@example.com"
             autoFocus
-            value={startupName}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
@@ -104,7 +104,7 @@ function LoginPage() {
             InputLabelProps={{ shrink: true }}
             placeholder="Confirm Password"
             value={confirmPassword}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <Button
             type="submit"

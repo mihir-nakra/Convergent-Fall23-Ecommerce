@@ -8,11 +8,11 @@ import {
   Alert,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { useAuth } from "./AuthContext";
+//import { useAuth } from "../AuthContext";
 
-function ApplicationStartup() {
+export default function ApplicationStartup() {
   const theme = useTheme();
-  const { apply , Error} = useAuth(); // Replace 'login' with 'apply'
+  //const { apply , Error} = useAuth(); // Replace 'login' with 'apply'
 
   const [startupName, setStartUpName] = useState("");
   const [companyDescription, setCompanyDescription] = useState("");
@@ -28,7 +28,7 @@ function ApplicationStartup() {
 
   const handleApply = () => {
 
-    apply({
+    /*apply({
       startupName,
       companyDescription,
       dateFounded,
@@ -41,8 +41,10 @@ function ApplicationStartup() {
       priorInvestors,
       creditScore,
     });
-  };
-
+  };*/
+  return <Typography component="h1" variant="h4" fontWeight="bold">
+  Apply for Your Startup
+</Typography>
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -231,5 +233,4 @@ function ApplicationStartup() {
     </Container>
   );
 }
-
-export default ApplicationStartup;
+}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { AuthProvider } from "./contexts/AuthContext";
-import HomePage from "./components/HomePage";
-import LoginPage from "./components/LoginPage";
+// import { AuthProvider } from "./contexts/AuthContext";
+// import HomePage from "./components/HomePage";
+// import LoginPage from "./components/LoginPage";
 import { CssBaseline } from "@mui/material";
-import theme from "./Theme";
+// import theme from "../t/Theme";
 
 function AppStartupStyle() {
   const createAccountStyle = {

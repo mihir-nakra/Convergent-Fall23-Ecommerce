@@ -16,14 +16,11 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext'
 
 export default function HomePage() {
-  const navigate = useNavigate();
-
-  const {currentUser} = useAuth();
-
-  useEffect(() => {
-    if (!currentUser) {
-      //kick them out
-      navigate("/login")
-    }
-  }, [currentUser])
+  return <div>
+    <a href="/startup-app">startup application</a>
+    <br />
+    <a href="/investor-app">investor application</a>
+    <br />
+    <a href="/dashboard">dashboard</a>
+  </div>
 }

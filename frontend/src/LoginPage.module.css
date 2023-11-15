@@ -1,0 +1,7 @@
+.button {
+    backgroundColor: #9ec1a3;
+    borderRadius: '40px';
+    height: '60px';
+    position: 'relative';
+    width: '475px';
+}

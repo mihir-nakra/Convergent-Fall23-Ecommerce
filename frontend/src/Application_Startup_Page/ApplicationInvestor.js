@@ -16,12 +16,12 @@ import CustomTextField from "./CustomTextField";
 import UploadForm from "./UploadForm";
 //import { useAuth } from "../AuthContext";
 
-export default function ApplicationStartup() {
+export default function ApplicationInvestor() {
     const theme = useTheme();
     //const { apply , Error} = useAuth(); // Replace 'login' with 'apply'
 
-    const [startupName, setStartUpName] = useState("");
-    const [companyDescription, setCompanyDescription] = useState("");
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
     const [dateFounded, setDateFounded] = useState("");
     const [location, setLocation] = useState("");
     const [industries, setIndustries] = useState("");
@@ -29,7 +29,7 @@ export default function ApplicationStartup() {
     const [equity, setEquity] = useState("");
     const [founders, setFounders] = useState("");
     const [numEmployees, setNumEmployees] = useState("");
-    const [priorInvestors, setPriorInvestors] = useState("");
+    const [priorInvestments, setPriorInvestments] = useState("");
     const [creditScore, setCreditScore] = useState("");
 
     const handleApply = () => {
@@ -81,34 +81,34 @@ export default function ApplicationStartup() {
           textAlign: 'center',
           padding: '.25em',
           fontFamily: 'Libre Franklin'
-        }}>Startup Application</h1>
+        }}>Investor Application</h1>
         <Grid container spacing={4} style={{width: '100%', height: '100%'}}>
                     <Grid item xs={6}>
                     <CustomTextField 
-                      label="Company Name"
-                      placeholder="Your Company Name"
-                      value={startupName}
-                      stateFunc={setStartUpName}
+                      label="Your Name"
+                      placeholder="First & Last"
+                      value={name}
+                      stateFunc={setName}
                       required={true}
 
                     />
                     </Grid>
                     <Grid item xs={6}>
                     <CustomTextField 
-                      label="Introduce Your Company"
-                      placeholder="Briefly describe your company"
-                      value={companyDescription}
-                      stateFunc={setCompanyDescription}
+                      label="Introduce Yourself"
+                      placeholder="I am an angel investor interested in..."
+                      value={description}
+                      stateFunc={setDescription}
                       required={true}
 
                     />
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6}>
                     <CustomTextField 
-                      label="Date Founded"
+                      label="Industries"
                       placeholder="mm/yyyy"
-                      value={dateFounded}
-                      stateFunc={setDateFounded}
+                      value={industries}
+                      stateFunc={setIndustries}
                       required={true}
 
                     />
@@ -123,17 +123,8 @@ export default function ApplicationStartup() {
 
                     />
                     </Grid>
+                    <Grid item xs={3} />
 
-                    <Grid item xs={6}>
-                    <CustomTextField 
-                      label="Industries"
-                      placeholder="Industry 1, Industry 2, ..."
-                      value={industries}
-                      stateFunc={setIndustries}
-                      required={true}
-
-                    />
-                    </Grid>
                     <Grid item xs={3}>
                     <CustomTextField 
                       label="Amount of Money"
@@ -146,7 +137,7 @@ export default function ApplicationStartup() {
                     </Grid>
                     <Grid item xs={3}>
                     <CustomTextField 
-                      label="Equity"
+                      label="Equity Sought"
                       placeholder="In Percent (%)"
                       value={equity}
                       stateFunc={setEquity}
@@ -156,7 +147,7 @@ export default function ApplicationStartup() {
                     </Grid>
                     <Grid item xs={6}>
                     <CustomTextField 
-                      label="Founders"
+                      label="Prior Investments"
                       placeholder="Founder 1, Founder 2, ..."
                       value={founders}
                       stateFunc={setFounders}
@@ -166,20 +157,10 @@ export default function ApplicationStartup() {
                     </Grid>
                     <Grid item xs={3}>
                     <CustomTextField 
-                      label="Est. Number of Employees"
-                      placeholder=""
-                      value={numEmployees}
-                      stateFunc={setNumEmployees}
-                      required={true}
-
-                    />
-                    </Grid>
-                    <Grid item xs={3}>
-                    <CustomTextField 
                       label="Prior Investments"
                       placeholder="How much equity / value"
-                      value={priorInvestors}
-                      stateFunc={setPriorInvestors}
+                      value={priorInvestments}
+                      stateFunc={setPriorInvestments}
                       required={true}
                     />
                     </Grid>
@@ -192,10 +173,11 @@ export default function ApplicationStartup() {
                       required={false}
                     />
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6}>
                     <UploadForm></UploadForm>
                     </Grid>
-                    <Grid item xs={12} style={{ textAlign: 'center', marginTop: '2em' }}>
+                </Grid>
+                <Grid item xs={12} style={{ textAlign: 'center', marginTop: '2em' }}>
             <Button
               type="submit"
               variant="contained"
@@ -215,7 +197,7 @@ export default function ApplicationStartup() {
               Submit Application
             </Button>
           </Grid>
-                </Grid>
+               
       </div>
     </Container>
 }

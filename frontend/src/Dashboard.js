@@ -32,7 +32,7 @@ export default function Dashboard() {
       } else if (page === pages.Messages) {
         return <h1>Messages Page</h1>
       } else if (page === pages.Matches) {
-        return <MatchesStartupView />
+        return <MatchesInvestorView />
       } else if (page === pages.Settings) {
         return <h1>Settings Page</h1>
       }

@@ -15,7 +15,7 @@ export default function MatchesStartupView() {
   const investorMatches = [
     {
       id: 1,
-      logo: "https://example.com/logo1.png",
+      logo: "https://serentcapital.com/wp-content/uploads/2022/05/Serent_logo_Flower-only-02-e1652288383675.png",
       name: "Serent Capital",
       tagline: "Your customers. Your values.",
       aboutUs:
@@ -23,7 +23,7 @@ export default function MatchesStartupView() {
     },
     {
       id: 2,
-      logo: "https://example.com/logo2.png",
+      logo: "https://scontent.fftw1-1.fna.fbcdn.net/v/t39.30808-1/278663225_10159748977017403_7530975099053035145_n.jpg?stp=cp0_dst-jpg_e15_p120x120_q65&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=BfBdoXpMCIkAX8JIXRk&_nc_oc=AQkjJBl7MFh9LHzZGPwXmpPIFULtSMyEVBXbWDYE0QLMNdzwLdPMa53B6-COWq3IYYA&_nc_ht=scontent.fftw1-1.fna&oh=00_AfC2J6n58Ml4WsBflzouk2uLUA2BJ2GDIx1i-oyIbGLL8g&oe=656BFCD8",
       name: "Thinktiv",
       tagline: "We transform companies into the most valuable versions of themselves.",
       aboutUs:
@@ -31,7 +31,7 @@ export default function MatchesStartupView() {
     },
     {
       id: 3,
-      logo: "https://example.com/logo3.png",
+      logo: "https://media.licdn.com/dms/image/C4D0BAQG1ylqL7Q4UVg/company-logo_200_200/0/1631333141189?e=2147483647&v=beta&t=DO03KYf1y9xb0MfnJaskIF3hGrE5glZSgad1o07KkSo",
       name: "True Wealth",
       tagline: "Investing in Gender Matters.",
       aboutUs:
@@ -39,7 +39,7 @@ export default function MatchesStartupView() {
     },
     {
       id: 4,
-      logo: "https://example.com/logo4.png",
+      logo: "https://images.crunchbase.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/wib9mpwgfrswtiwgn5vd",
       name: "Trust Ventures",
       tagline: "Guiding startups through unventured territory.",
       aboutUs:
@@ -47,7 +47,7 @@ export default function MatchesStartupView() {
     },
     {
       id: 5,
-      logo: "https://example.com/logo5.png",
+      logo: "https://mma.prnewswire.com/media/1816807/Elsewhere_Partners_Logo.jpg?p=facebook",
       name: "Elsewhere Partners",
       tagline: "Transitional capital. Transformational expertise. Success on your terms.",
       aboutUs:

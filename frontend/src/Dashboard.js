@@ -10,6 +10,9 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import FeedPage from "./Feed_Page/FeedPage";
 import MatchesInvestorView from "./Matches_Pages/MatchesInvestorView";
 import MatchesStartupView from "./Matches_Pages/MatchesStartupView";
+import Messages from "./MessagePage";
+import InvestorProfile from "./Profile_Pages/InvestorProfile";
+import StartupProfile from "./Profile_Pages/StartupProfile";
 
 
 export default function Dashboard() {
@@ -22,17 +25,21 @@ export default function Dashboard() {
       Settings: 4
     }
 
-    const [page, setPage] = useState(pages.Home);
+    const [page, setPage] = useState(pages.Matches);
+
+    const switchToProfile = () => {
+      setPage(pages.Profile);
+    }
 
     const getPage = () => {
       if (page === pages.Home) {
         return <FeedPage />
       } else if (page === pages.Profile) {
-        return <h1>Profile Page</h1>
+        return <StartupProfile />
       } else if (page === pages.Messages) {
-        return <h1>Messages Page</h1>
+        return <Messages />
       } else if (page === pages.Matches) {
-        return <MatchesInvestorView />
+        return <MatchesStartupView switchToProfile={switchToProfile}/>
       } else if (page === pages.Settings) {
         return <h1>Settings Page</h1>
       }
@@ -67,7 +74,7 @@ export default function Dashboard() {
           position: 'fixed',
           left: '0'
             }}
-        backgroundColor="#496E91">
+        backgroundColor="#2C92D5">
             <Menu menuItemStyles={menuItemStyles}>
               <div style={{height: '10rem'}}></div>
               <MenuItem onClick={() => setPage(pages.Home)} icon={<HomeIcon style={{color: "#ffffff"}}/>}> Home </MenuItem>

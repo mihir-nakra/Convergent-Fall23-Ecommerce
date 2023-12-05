@@ -1,5 +1,3 @@
-# Convergent-Fall23-Ecommerce
-
 # Innovest: Connecting Student Startups with Investors
 
 ## Overview

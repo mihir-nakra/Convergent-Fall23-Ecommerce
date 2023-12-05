@@ -23,7 +23,7 @@ export default function MatchesStartupView() {
     },
     {
       id: 2,
-      logo: "https://scontent.fftw1-1.fna.fbcdn.net/v/t39.30808-1/278663225_10159748977017403_7530975099053035145_n.jpg?stp=cp0_dst-jpg_e15_p120x120_q65&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=BfBdoXpMCIkAX8JIXRk&_nc_oc=AQkjJBl7MFh9LHzZGPwXmpPIFULtSMyEVBXbWDYE0QLMNdzwLdPMa53B6-COWq3IYYA&_nc_ht=scontent.fftw1-1.fna&oh=00_AfC2J6n58Ml4WsBflzouk2uLUA2BJ2GDIx1i-oyIbGLL8g&oe=656BFCD8",
+      logo: "https://scontent.fftw1-1.fna.fbcdn.net/v/t39.30808-6/278663225_10159748977017403_7530975099053035145_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=IYXmt4hV1oQAX_rIOsY&_nc_oc=AQk0hDJtRivXWxa0ml9r2_pvXXVpfw2vdIzF0YQhxvaxiU-TuJ23vOfr6gWLPHoOeXQ&_nc_ht=scontent.fftw1-1.fna&oh=00_AfDFzV9fG9pkKRZMt8k_DoDUlkJf01qRi4IZgRG7HvdOlw&oe=65722C28",
       name: "Thinktiv",
       tagline: "We transform companies into the most valuable versions of themselves.",
       aboutUs:

@@ -1,57 +1,97 @@
-import React from 'react'
-import { startupData } from '../StartupData'
-import { Container, Grid } from '@mui/material'
+import React, { useState } from 'react'
+import { startupData, investorData } from '../StartupData'
+import { Avatar, Container, Grid, Typography, Paper } from '@mui/material'
 
 export default function FeedPage() {
 
+    const pageTypes = {
+        investor: 0,
+        startup: 1
+    }
 
-    const startupDivs = () => {
-        return startupData.map(startup => {
-            return  ( <div style={{
-            width: '38rem', 
-            height: '10rem', 
+    const [pageType, setPageType] = useState(pageTypes.investor);
+
+    const getFeatureDiv = () => {
+        let item = {}
+        if (pageType === pageTypes.investor) {
+            item = investorData[0];
+        } else {
+            item = startupData[0];
+        }
+
+        return <div style={{
+            width: '60rem', 
+            height: '20rem', 
             backgroundColor: '#fff',
-            borderRadius: '15px',
+            borderRadius: '10px',
             boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-            paddingLeft: '2rem',
-            paddingTop: '1rem',
-            paddingBottom: '1rem',
-            marginBottom: '3rem',
-            paddingRight: '2rem'
+            padding: '1.5rem',
+            
             }}>
-            <Grid container>
-            <Grid item xs={2}>
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    overflow: 'hidden',
-                    height: '120px',
-                    width: '100px',
-                    borderRadius: '10px',
-                    marginTop: '1.3rem',
-
-                }}>
-                    <img style={{
-                        height: '200px',
-                        width: '200px',
+            <Grid container spacing={5}>
+                <Grid item xs={5}>
+                    <img 
+                    style={{
+                        
+                        height: '20rem',
+                        width: '20rem',
                         borderRadius: '10px',
                         // marginRight: '2rem'
-                    }} src="https://sugargeekshow.com/wp-content/uploads/2020/10/baked_donut_recipe_featured.jpg" alt="" />
-                </div>
-                    
+                    }} src={item.logo} alt="" />
                 </Grid>
-                <Grid item xs={9} style={{
-                    marginLeft: '2rem'
-                }}>
-                     <h2 style={{fontFamily: 'Libre Franklin'}}>{startup.name}</h2>
-                     <p style={{fontFamily: 'Libre Franklin', paddingRight: '1rem'}}>{startup.aboutUs}</p>
+                <Grid item xs={7}>
+                    <h2 style={{
+                        margin: 0,
+                        fontFamily: 'Libre Franklin',
+                    }}>{item.name}</h2>
+                    <hr />
+                    <em style={{fontFamily: 'Libre Franklin', color: 'gray'}}>{item.tagline}</em>
+                    <p style={{fontFamily: 'Libre Franklin', fontSize: '1.2rem'}}>{item.aboutUs}</p>
                 </Grid>
             </Grid>
-            
-            {/* <img src="https://sugargeekshow.com/wp-content/uploads/2020/10/baked_donut_recipe_featured.jpg" alt="" /> */}
-        </div> )
+        </div>
+    }
+
+    const getPosts = data => {
+        return data.map(item => {
+            return <Grid item xs={12} style={{marginLeft:'14rem'}}>
+                <Paper style={{
+                    width: '50%',
+                    padding:'1rem'
+                }}>
+                    <Grid container>
+                        <Grid item xs={4}>
+                        <Avatar style={{
+                            height: '50px',
+                            width: '50px',
+                            borderRadius: "50px"
+                            
+                        }} src={item.logo} />
+                        </Grid>
+                        <Grid item xs={8}>
+                            <Typography style={{
+                                fontFamily: 'Libre Franklin',
+                                fontWeight: 'bold',
+                                fontSize: '2rem',
+                                marginBottom: '1rem'
+                            }}>{item.name}</Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <img style={{width: '100%', height: '400px'}} src={item.post} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Typography style={{
+                            marginBottom: '1rem',
+                            marginTop: '1rem'
+                        }}>{item.aboutUs}</Typography>
+                    </Grid>
+                </Paper>
+            </Grid>
         })
+        
     }
 
 
@@ -66,13 +106,21 @@ export default function FeedPage() {
 
         // position: 'fixed'
     }}>
-        <h1 style={{
+        <h1 
+        onClick={() => setPageType(old => {
+            if (old === pageTypes.investor)  {
+                return pageTypes.startup
+            } else {
+                return pageTypes.investor
+            }
+        })}
+        style={{
             fontFamily: 'Libre Franklin',
             paddingBottom: '1.5rem'
         }}>
-        Home
+        {pageType === pageTypes.startup ? "Investor" : "Startup"} Home
         </h1>
-
+{/* 
         <h3 style={{
             fontFamily: 'Libre Franklin',
             fontWeight: 'bold',
@@ -80,22 +128,21 @@ export default function FeedPage() {
             paddingBottom: '.25rem'
         }}
         >
-        Featured Startup
-        </h3>
+        Featured {pageType === pageTypes.startup ? "Startup" : "Investor"}
+        </h3> */}
 
-        <div style={{
-            width: '40rem', 
-            height: '20rem', 
-            backgroundColor: '#fff',
-            borderRadius: '10px',
-            boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)'
-            }}>
-        </div>
+        {/* {getFeatureDiv()} */}
 
-        <div style={{width: '1140px', height: '5rem'}}></div>
+        {/* <div style={{width: '1140px', height: '5rem'}}></div> */}
 
 
-       {startupDivs()}
+       {/* {makePosts()} */}
+
+       <Grid container spacing={5} style={{
+        
+       }}>
+            {getPosts(pageType === pageTypes.investor ? investorData : startupData)}
+       </Grid>
 
     </div>
   )

@@ -13,10 +13,10 @@ import Dashboard from './Dashboard.js';
 function App() {
   const router = createBrowserRouter(
     [
-      {path: "/", element: <HomePage />},
+      {path: "/", element: <Dashboard />},
       {path: "/startup-app", element: <ApplicationStartup />},
       {path: "/investor-app", element: <ApplicationInvestor />},
-      {path: "/dashboard", element: <Dashboard />}
+      // {path: "/dashboard", element: <Dashboard />}
     ]
   );
   return (

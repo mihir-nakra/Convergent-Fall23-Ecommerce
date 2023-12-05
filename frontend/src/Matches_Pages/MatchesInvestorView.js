@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-export default function MatchesInvestorView() {
+export default function MatchesInvestorView(props) {
   const theme = useTheme();
 
   // Hardcoded startup information
@@ -84,9 +84,28 @@ export default function MatchesInvestorView() {
         Matches
       </Typography>
 
+
+        <Grid container>
+            <Grid item xs={4}>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <div
+                            style={{
+                                marginLeft: '10px',
+                                
+                            }}
+                        ></div>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item>
+
+            </Grid>
+        </Grid>
+
       <Grid container spacing={2}>
         {startupMatches.map((startup) => (
-          <Grid item xs={12} key={startup.id}>
+          <Grid item xs={12} key={startup.id} onClick={props.switchToProfile}>
             <Paper elevation={3} 
             style={{ 
                 padding: theme.spacing(2),
@@ -168,6 +187,7 @@ export default function MatchesInvestorView() {
               </Grid>
             </Paper>
           </Grid>
+          
         ))}
       </Grid>
     </Container>

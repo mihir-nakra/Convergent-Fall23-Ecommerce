@@ -179,6 +179,7 @@ export default function ApplicationInvestor() {
                 </Grid>
                 <Grid item xs={12} style={{ textAlign: 'center', marginTop: '2em' }}>
             <Button
+            onClick={() => window.location.href = "/"}
               type="submit"
               variant="contained"
               style={{
